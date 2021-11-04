@@ -1,38 +1,264 @@
-.App {
-  text-align: center;
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  font-family: "Paytone One", sans-serif;
+  font-size: 55px;
+  /* border: red 2px solid; */
+  padding-left: 35%;
+  padding-top: 10%;
+  height: 94vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logoNoText {
+  /* border: 2px orchid solid; */
+  margin-right: 1550px;
+  /* padding-right: 10px; */
+  height: 90px;
+  width: fit-content;
+  position: sticky;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbar2 {
+  justify-content: end;
+  padding-top: 25px;
+}
+.login-button {
+  font-size: 20px;
+  border: black 1px solid;
+  margin-right: 10px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+  -webkit-transition: color 0s ease-out;
+  -moz-transition: color 0s ease-out;
+  -o-transition: color 0s ease-out;
+  transition: color 0s ease-out;
+}
+
+.login-button:hover {
+  background-color: black !important;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.signup-button {
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
+  border: black 1px solid;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+  -webkit-transition: color 0s ease-out;
+  -moz-transition: color 0s ease-out;
+  -o-transition: color 0s ease-out;
+  transition: color 0s ease-out;
 }
 
-@keyframes App-logo-spin {
+.signup-button:hover {
+  background-color: black !important;
+  color: white;
+  cursor: pointer;
+}
+
+.signUp {
+  /* border: 2px black solid; */
+  width: 50%;
+  margin-top: 12%;
+  margin-left: 25%;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bolder;
+}
+
+.signUpLanding {
+  /* border: 2px black solid; */
+  width: 85%;
+  /* margin-top: 42%;
+  margin-left: 55%; */
+  padding-left: 15%;
+  padding-right: 15%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bolder;
+}
+
+.claimsCreate {
+  /* border: 2px pink solid; */
+  font-family: "Quicksand", sans-serif;
+  font-weight: bolder;
+}
+
+#warrantyIndex {
+  /* border: 2px greenyellow solid; */
+  margin-top: 50px;
+  /* margin-left: 500px;
+  width: 275px; */
+}
+
+.signUpTitle {
+  /* border: 2px green solid; */
+  padding-bottom: 2%;
+  text-align: center;
+  font-family: "Paytone One", sans-serif !important;
+  font-weight: lighter;
+}
+
+.loginHeader {
+  border: 2px green solid;
+  text-align: center;
+  font-family: "Paytone One", sans-serif !important;
+}
+
+.tableTitles {
+  font-family: "Paytone One", sans-serif !important;
+  font-weight: bolder;
+  /* border: rosybrown 2px solid; */
+  /* margin-top: 100px; */
+  width: fit-content;
+}
+
+.tables {
+  font-family: "Quicksand", sans-serif !important;
+  font-weight: bolder;
+  /* border: 2px green solid; */
+  /* height: 500px; */
+  padding-top: 100px;
+  width: 75vw;
+  /* width: 75vw; */
+}
+
+.tableHeaders {
+  font-family: "Quicksand", sans-serif !important;
+  font-size: 19px;
+}
+
+.warrantyModal {
+  font-family: "Quicksand", sans-serif !important;
+  font-weight: bolder;
+}
+
+.modalHeader {
+  font-size: 55px;
+  font-family: "Quicksand", sans-serif !important;
+}
+
+.warrantyTable {
+  font-family: "Quicksand", sans-serif !important;
+  font-weight: bolder;
+  /* border: 2px green solid; */
+  /* height: 500px; */
+  padding-top: 100px;
+  width: 75vw;
+}
+
+.warranty-button {
+  font-size: 20px;
+  border: black 1px solid;
+  margin-left: 15px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
+
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+  -webkit-transition: color 0s ease-out;
+  -moz-transition: color 0s ease-out;
+  -o-transition: color 0s ease-out;
+  transition: color 0s ease-out;
+}
+
+.warranty-button:hover {
+  background-color: black !important;
+  color: white;
+  cursor: pointer;
+}
+
+.claimsButton {
+  height: 30rem;
+  width: 30rem;
+  font-size: 50px;
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  font-weight: 800;
+  border: black 1px solid;
+  margin-top: 1%;
+  margin-left: 15%;
+  background-color: black;
+  -webkit-transition: background-color 0s ease-out;
+  -moz-transition: background-color 0s ease-out;
+  -o-transition: background-color 0s ease-out;
+  transition: background-color 0s ease-out;
+  -webkit-transition: color 0s ease-out;
+  -moz-transition: color 0s ease-out;
+  -o-transition: color 0s ease-out;
+  transition: color 0s ease-out;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+.claimsButton:hover {
+  background-color: white !important;
+  color: black;
+  cursor: pointer;
+}
+
+.LandingPageHeader {
+  font-family: "Paytone One", sans-serif !important;
+  /* border: 2px orange solid; */
+  width: fit-content;
+  margin-left: 15%;
+  margin-top: 5%;
+}
+
+.logo {
+  /* border: 2px black solid; */
+  margin-top: -25px;
+  animation: fadeIn 4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.shadowText:hover {
+  text-shadow: 0.5px 0.5px grey, 0.5px 0.5px grey, 0.5px 0.5px grey;
+  -webkit-transform: translateX(-1px);
+  transform: translateX(-1px);
+}
+
+.searchBar {
+  width: 80%;
+  margin-right: 150px;
+  border: 1px solid black;
+  font-family: "Quicksand", sans-serif;
+  color: black;
+  font-weight: 800;
+  margin-top: 35px;
+  margin-left: 15px;
+  margin-bottom: 20px;
 }
