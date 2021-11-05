@@ -9,6 +9,7 @@ import {
   ModalBody,
   ModalHeader,
 } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 class WarrantyEdit extends Component {
   constructor(props) {
@@ -43,30 +44,27 @@ class WarrantyEdit extends Component {
     event.preventDefault();
 
     localStorage.getItem("isAdmin") === "false"
-      ? fetch(
-          `http://localhost:3000/warranty/update/${this.props.warrantyToUpdate.id}`,
-          {
-            method: "PUT",
-            body: JSON.stringify({
-              name: this.state.editName,
-              date_purchased: this.state.editDate,
-              warranty_expiration: this.state.editExpiration,
-              model_number: this.state.editModel,
-              serial_number: this.state.editSerial,
-              receipt: this.state.editReceipt,
-              notes: this.state.editNotes,
-            }),
-            headers: new Headers({
-              "Content-Type": "application/json",
-              Authorization: token,
-            }),
-          }
-        ).then((res) => {
+      ? fetch(`${APIURL}/warranty/update/${this.props.warrantyToUpdate.id}`, {
+          method: "PUT",
+          body: JSON.stringify({
+            name: this.state.editName,
+            date_purchased: this.state.editDate,
+            warranty_expiration: this.state.editExpiration,
+            model_number: this.state.editModel,
+            serial_number: this.state.editSerial,
+            receipt: this.state.editReceipt,
+            notes: this.state.editNotes,
+          }),
+          headers: new Headers({
+            "Content-Type": "application/json",
+            Authorization: token,
+          }),
+        }).then((res) => {
           this.props.fetchWarranty();
           this.props.updateOff();
         })
       : fetch(
-          `http://localhost:3000/warranty/update/admin/${this.props.warrantyToUpdate.id}`,
+          `${APIURL}/warranty/update/admin/${this.props.warrantyToUpdate.id}`,
           {
             method: "PUT",
             body: JSON.stringify({

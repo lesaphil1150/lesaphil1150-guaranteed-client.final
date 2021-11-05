@@ -9,6 +9,7 @@ import {
   ModalBody,
   ModalHeader,
 } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 class ClaimsEdit extends Component {
   constructor(props) {
@@ -40,41 +41,35 @@ class ClaimsEdit extends Component {
     event.preventDefault();
 
     localStorage.getItem("isAdmin") === "false"
-      ? fetch(
-          `http://localhost:3000/claim/update/${this.props.claimToUpdate.id}`,
-          {
-            method: "PUT",
-            body: JSON.stringify({
-              name_of_item: this.state.editName,
-              date_of_claim: this.state.editDate,
-              resolution: this.state.editResolution,
-              notes: this.state.editNotes,
-            }),
-            headers: new Headers({
-              "Content-Type": "application/json",
-              Authorization: token,
-            }),
-          }
-        ).then((res) => {
+      ? fetch(`${APIURL}/claim/update/${this.props.claimToUpdate.id}`, {
+          method: "PUT",
+          body: JSON.stringify({
+            name_of_item: this.state.editName,
+            date_of_claim: this.state.editDate,
+            resolution: this.state.editResolution,
+            notes: this.state.editNotes,
+          }),
+          headers: new Headers({
+            "Content-Type": "application/json",
+            Authorization: token,
+          }),
+        }).then((res) => {
           this.props.fetchClaims();
           this.props.updateOff();
         })
-      : fetch(
-          `http://localhost:3000/claim/update/admin/${this.props.claimToUpdate.id}`,
-          {
-            method: "PUT",
-            body: JSON.stringify({
-              name_of_item: this.state.editName,
-              date_of_claim: this.state.editDate,
-              resolution: this.state.editResolution,
-              notes: this.state.editNotes,
-            }),
-            headers: new Headers({
-              "Content-Type": "application/json",
-              Authorization: token,
-            }),
-          }
-        ).then((res) => {
+      : fetch(`${APIURL}/claim/update/admin/${this.props.claimToUpdate.id}`, {
+          method: "PUT",
+          body: JSON.stringify({
+            name_of_item: this.state.editName,
+            date_of_claim: this.state.editDate,
+            resolution: this.state.editResolution,
+            notes: this.state.editNotes,
+          }),
+          headers: new Headers({
+            "Content-Type": "application/json",
+            Authorization: token,
+          }),
+        }).then((res) => {
           this.props.fetchClaims();
           this.props.updateOff();
         });

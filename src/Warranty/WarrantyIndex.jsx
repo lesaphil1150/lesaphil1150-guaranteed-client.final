@@ -3,6 +3,7 @@ import { Container, Row, Col, Input } from "reactstrap";
 import WarrantyCreate from "./WarrantyCreate";
 import WarrantyTable from "./WarrantyTable";
 import WarrantyEdit from "./WarrantyEdit";
+import APIURL from "../helpers/environment";
 
 class WarrantyIndex extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class WarrantyIndex extends Component {
     let token = localStorage.getItem("token");
 
     localStorage.getItem("isAdmin") === "true"
-      ? fetch("http://localhost:3000/warranty/getall", {
+      ? fetch(`${APIURL}/warranty/getall`, {
           method: "GET",
           headers: new Headers({
             "Content-Type": "application/json",
@@ -31,7 +32,7 @@ class WarrantyIndex extends Component {
             // console.log(logClaim);
             this.setState({ warranties: logWarranty });
           })
-      : fetch("http://localhost:3000/warranty/mine", {
+      : fetch(`${APIURL}/warranty/mine`, {
           method: "GET",
           headers: new Headers({
             "Content-Type": "application/json",

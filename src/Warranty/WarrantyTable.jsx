@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Table, Button } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 class WarrantyTable extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class WarrantyTable extends Component {
 
   deleteWarranty = (warranty) => {
     let token = localStorage.getItem("token");
-    fetch(`http://localhost:3000/warranty/delete/${warranty.id}`, {
+    fetch(`${APIURL}/warranty/delete/${warranty.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

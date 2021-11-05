@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, Collapse } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 class ClaimsCreate extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class ClaimsCreate extends Component {
   handleSubmit = (e) => {
     let token = localStorage.getItem("token");
     e.preventDefault();
-    fetch("http://localhost:3000/claim/create", {
+    fetch(`${APIURL}/claim/create`, {
       method: "POST",
       body: JSON.stringify({
         name_of_item: this.state.name_of_item,

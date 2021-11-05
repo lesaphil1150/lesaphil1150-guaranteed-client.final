@@ -3,6 +3,7 @@ import { Container, Row, Col, Input } from "reactstrap";
 import ClaimsCreate from "./ClaimsCreate";
 import ClaimsTable from "./ClaimsTable";
 import ClaimsEdit from "./ClaimsEdit";
+import APIURL from "../helpers/environment";
 
 class ClaimsIndex extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class ClaimsIndex extends Component {
     let token = localStorage.getItem("token");
 
     localStorage.getItem("isAdmin") === "true"
-      ? fetch("http://localhost:3000/claim/getall", {
+      ? fetch(`${APIURL}/claim/getall`, {
           method: "GET",
           headers: new Headers({
             "Content-Type": "application/json",
@@ -31,7 +32,7 @@ class ClaimsIndex extends Component {
             console.log(logClaim);
             this.setState({ claims: logClaim });
           })
-      : fetch("http://localhost:3000/claim/mine", {
+      : fetch(`${APIURL}/claim/mine`, {
           method: "GET",
           headers: new Headers({
             "Content-Type": "application/json",

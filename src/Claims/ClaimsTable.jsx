@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Table, Button } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 class ClaimsTable extends Component {
   // constructor(props) {
@@ -9,7 +10,7 @@ class ClaimsTable extends Component {
 
   deleteClaim = (claim) => {
     let token = localStorage.getItem("token");
-    fetch(`http://localhost:3000/claim/delete/${claim.id}`, {
+    fetch(`${APIURL}/claim/delete/${claim.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
