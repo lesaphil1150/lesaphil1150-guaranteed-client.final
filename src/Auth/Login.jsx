@@ -33,11 +33,11 @@ class Login extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.props.updateToken(data.sessionToken);
-        this.props.updateName(data.User.name);
+        this.props.updateName(data.user.name);
         this.handleClick();
         // console.log(data.User.isAdmin);
-        localStorage.setItem("name", data.User.name);
-        localStorage.setItem("isAdmin", data.User.isAdmin);
+        localStorage.setItem("name", data.user.name);
+        localStorage.setItem("isAdmin", data.user.isAdmin);
       });
   };
 
