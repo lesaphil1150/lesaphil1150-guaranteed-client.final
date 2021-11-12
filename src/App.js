@@ -13,13 +13,17 @@ import LoggedInNav from "./Home/LoggedInNav";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { sessionToken: "", localStorage: "", name: "" };
+    this.state = { sessionToken: "", name: "" };
   }
 
   updateToken = (newToken) => {
     localStorage.setItem("token", newToken);
-    this.setState({ sessionToken: newToken });
-    console.log(localStorage.getItem("token", newToken));
+    if (newToken === undefined) {
+      window.location.reload(false);
+    } else {
+      this.setState({ sessionToken: newToken });
+      console.log(localStorage.getItem("token", newToken));
+    }
   };
 
   updateName = (newName) => {

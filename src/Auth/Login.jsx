@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Form, Label, Input, Button, FormGroup } from "reactstrap";
-import { Route, Link, Swtich, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "../App.css";
-import background from "../assets/background.png";
 import APIURL from "../helpers/environment";
 
 class Login extends Component {
@@ -24,14 +23,20 @@ class Login extends Component {
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
-        // name: this.state.name,
         isAdmin: this.state.isAdmin,
       }),
       headers: new Headers({
         "Content-Type": "application/json",
       }),
     })
-      .then((response) => response.json())
+      .then((res) => {
+        if (!res.ok) {
+          alert(
+            'Login does not exist. Please create an account by clicking "Create an account" '
+          );
+        }
+        return res.json();
+      })
       .then((data) => {
         this.props.updateToken(data.sessionToken);
         this.props.updateName(data.user.name);
@@ -51,8 +56,7 @@ class Login extends Component {
       <div className="signup">
         <Form onSubmit={this.handleSubmit} className="signUp">
           <h1 className="signUpTitle"> Login.</h1>
-          {/* <p>les.a.phil@outlook.com, 1234</p>
-          <p>Admin: admin@email.com, 1234</p> */}
+
           <FormGroup>
             <Label htmlFor="email">Email: &nbsp;</Label>
             <Input

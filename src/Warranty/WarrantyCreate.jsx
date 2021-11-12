@@ -154,15 +154,6 @@ class WarrantyCreate extends Component {
               />
               <br />
             </FormGroup>{" "}
-            {/* <FormGroup>
-              <Label htmlFor="receipt" />
-              Receipt
-              <Input
-                name="receipt"
-                value={this.receipt}
-                onChange={(e) => this.setState({ receipt: e.target.value })}
-              />
-            </FormGroup> */}
             <FormGroup>
               <Label htmlFor="notes" />
               Notes

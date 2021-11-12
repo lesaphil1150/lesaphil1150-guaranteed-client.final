@@ -49,7 +49,6 @@ class WarrantyTable extends Component {
               onClick={() => {
                 console.log(warranty);
                 this.props.editUpdateWarranty(warranty);
-                // this.props.updateOn();
               }}
             >
               Update

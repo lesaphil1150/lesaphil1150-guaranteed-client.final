@@ -28,7 +28,7 @@ class LoggedInNav extends Component {
   render() {
     return (
       <div>
-        <Navbar color="none" light expand="sm" className="loggedinNav ">
+        <Navbar color="none" light expand="md" className="navbar2">
           <Link to="/">
             <NavbarBrand>
               <img src={logo3} alt="logo" className="logoNoText"></img>
