@@ -73,12 +73,12 @@ class WarrantyTable extends Component {
       <>
         <h1 className="tableTitles">Warranty History.</h1>
 
-        <Table responsive className="warrantyTable">
+        <Table hover responsive className="tables">
           <thead>
             <tr>
               <th className="tableHeaders">ID</th>
               <th className="tableHeaders">Name</th>
-              <th className="tableHeaders">Date Purchased</th>
+              <th className="tableHeaders">Purchase Date </th>
               <th className="tableHeaders">Warranty Expiration</th>
               <th className="tableHeaders">Model Number</th>
               <th className="tableHeaders">Serial Number</th>

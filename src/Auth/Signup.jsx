@@ -33,7 +33,13 @@ class Signup extends React.Component {
           "Content-Type": "application/json",
         }),
       })
-        .then((response) => response.json())
+        .then((res) => {
+          if (!res.ok) {
+            alert("Email already exists.");
+          }
+          return res.json();
+        })
+
         .then((data) => {
           this.props.updateToken(data.sessionToken);
           this.props.updateName(data.user.name);

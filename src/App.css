@@ -156,10 +156,8 @@ a:active {
 .warrantyTable {
   font-family: "Quicksand", sans-serif !important;
   font-weight: bolder;
-  /* border: 2px green solid; */
-  /* height: 500px; */
   padding-top: 100px;
-  width: 75vw;
+  /* border: 2px solid black; */
 }
 
 .warranty-button {
@@ -261,4 +259,8 @@ a:active {
   margin-top: 35px;
   margin-left: 15px;
   margin-bottom: 20px;
+}
+
+th {
+  padding-right: 55px !important;
 }
