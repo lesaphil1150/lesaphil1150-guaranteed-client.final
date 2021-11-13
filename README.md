@@ -5,14 +5,14 @@ guaranteed. is an warranty and claim tracking site. After owning a house, I real
 Links
 Client
 
-Heroku:
+Heroku: https://guaranteed.herokuapp.com/
 
-GitHub:
+GitHub: https://github.com/lesaphil1150/lesaphil1150-guaranteed-client.final.git
 
 Server
-Heroku:
+Heroku: https://lesaphil-guaranteed.herokuapp.com/
 
-GitHub:
+GitHub: https://github.com/lesaphil1150/guaranteed-server.git
 
 About the Project
 For this project, we were required to use React (Class Components). We were also required to include user roles, including an admin role. The admin role is allowed to view all posts, edit, and delete. I included Cloudinary to upload images of receipts for tracking purposes.
